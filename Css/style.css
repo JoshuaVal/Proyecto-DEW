@@ -1,0 +1,14 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    
+    display: flex;
+    background-image: url(/img/Fondo\ 1.png);
+}
+
