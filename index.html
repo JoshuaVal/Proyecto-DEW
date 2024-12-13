@@ -4,95 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Versión 1</title>
-    <link rel="stylesheet" href="/Css/style.css"> </head>
+    <link rel="stylesheet" href="/Css/style.css">
+</head>
 <body>
     <header>
         <nav id="nav">
-                <h1 class="title-nav">TASTY</h1>       
+            <h1 class="title-nav">TASTY</h1>       
             <div id="links-nav">
-                <a href="#">Inicio</a>
-                <a href="#">Menú</a>
-                <a href="#">Pedido</a>
-                <a href="#">Nosotros</a>
-                <a href="#">Contacto</a>
-                <button>
-                    <a href="#" class="button-nav">Ordena ya!</a>
-                </button>
-                </div>
+                <a href="#">INICIO</a>
+                <a href="#">MENU</a>
+                <a href="#">PEDIDO</a>
+                <a href="#">NOSOTROS</a>
+                <a href="#">CONTACTO</a>
+                <button class="button-nav">¡ORDENA YA!</button>
             </div>
         </nav>
-    </header>
-    <main>
         <section id="section-container">
             <aside class="container">
                 <div class="text-container">
-                    <span>Fast food burguers</span>
-                    <h2>Magic<br />Burger</h2>
-                    <p>¡Descubre la magia en cada bocado! Nuestras hamburguesas están hechas con ingredientes frescos y de alta calidad, combinados para crear sabores irresistibles.</p>
-                </div>
-                <div class="button-container">
-                    <button>
-                        <a id="a-button-container" href="#" class="btn">Ordena ya!</a>
-                    </button>
-                </div>
-                <div class="img-social">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
+                    <span>FAST FOOD BURGUERS</span>
+                    <h2>MAGIC<br />BURGER</h2>
+                    <p>¡Descubre la magia en cada bocado! Nuestras hamburguesas<br /> están hechas con ingredientes frescos y de alta calidad, <br />combinados para crear sabores irresistibles.</p>
+                    <button class="button-nav">¡ORDENA YA!</button>
+                    <ul class="social-links">
+                        <li><a href="#" class="iconos" target="_blank" title="facebook">FB</a></li>
+                        <li><a href="#" class="iconos" target="_blank" title="instagram">IG</a></li>
+                        <li><a href="#" class="iconos" target="_blank" title="twitter">X</a></li>
+                    </ul>
             </aside>
+            
             <div id="img-container">
-                <img src="./img/pngwing.com 1.png" alt="img">
+                <img src="./img/pngwing.com 1.png" alt="img" class="active">
+                
+
             </div>
         </section>
+    </header>
+    <main>
         <section class="cat-menu">
-            <div class="menu">
-                <img src="" alt="">
-                <h4>BURGER</h4>
-                <span>desde</span>
-                <h4>S/10.99</h4>
-                <button>Pedido</button>
-            </div>
-            <div class="menu">
-                <img src="" alt="">
-                <h4>PIZZA</h4>
-                <span>desde</span>
-                <h4>S/30.99</h4>
-                <button>Pedido</button>
-            </div>
-            <div class="menu">
-                <img src="" alt="">
-                <h4>OTROS</h4>
-                <span>desde</span>
-                <h4>S/10.99</h4>
-                <button>Pedido</button>
-            </div>
-            <div class="menu">
-                <img src="" alt="">
-                <h4>COMPLEMENTOS</h4>
-                <span>desde</span>
-                <h4>S/10.99</h4>
-                <button>Pedido</button>
-            </div>
-            <div class="menu">
-                <img src="" alt="">
-                <h4>BEBIDAS</h4>
-                <span>desde</span>
-                <h4>S/5.99</h4>
-                <button>Pedido</button>
-            </div>
+            <h1 class="menu-title">CATEGORIAS DEL MENU</h1>
+            <div id="menu-container"></div>
         </section>
-        <div id="footer">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-        </div>
+
+        <section class="recomend">
+            <h1 class="menu-title">RECOMENDACIONES</h1>
+            <h2>Descubre los platos favoritos de nuestros clientes, nuestras recomendaciones te garantizan una experiencia culinaria inolvidable.</h2>
+            <div id="container-recomendacion"></div>  
+        </section>
+
+        <section class="clientes">
+            <h1 class="menu-title">REVIEWS DE CLIENTES</h1>
+            <div class="contenedor-review">
+                <img src="./img/steptodown 2.png" alt="">
+                <div class="comentarios">
+                    <div class="come1">
+                        <p>Buenisimo, lo recomiendo definitivamente. </p>
+                        <img src="./img/Ellipse 14.png" alt="">
+                    </div>
+                    <div class="come2">
+                        <img src="./img/Ellipse 14.png" alt="">
+                        <p>Buenisimo, lo recomiendo definitivamente.</p>
+                
+                    </div>
+                    <div class="come3">
+                        <img src="./img/Ellipse 14.png" alt="">
+                        <p>Buenisimo, lo recomiendo definitivamente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <section>
+                <div class="descarga">
+                    <img src="./img/Vector (4).png" alt="">
+                    <h1>Descarga nuestro menú</h1>
+                    <img src="./img/Vector (4).png" alt="">
+                    <button class="download">DESCARGAR</button>
+                    <img src="./img/Vector (5).png" alt="">
+                    <img src="./img/Vector (4).png" alt=""> 
+                </div>
+            </section>
+
+            <div id="footer"></div>
+
     </main>
+    <script  type="module"  src="/Js/Home.js"></script>
 </body>
+
+
 </html>
