@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+/* aplica estilos a todo */
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+/*barra de navegacion*/
+
+#nav{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:10px;
+}
+
+#nav .title-nav a{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    color: #FF5B00;
+    margin: 19.92px 0;
+    line-height: 23.44px;
+
+}
+
+
+#nav a{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #000000;
+    line-height: 23.44px;
+}
+
+.button-nav {
+    background-color: #F6762C;
+    width: 175px;
+    height: 49px;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 23.44px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+header #nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+header #nav #links-nav a{
+    margin: 0px 20px;
+}
+
+
+
+.boton{
+    width: 100%;
+    padding:12px;
+    font-size: 17px;
+    background:#F6762C;
+    color:#fff;
+    margin-top: 5px;
+    padding: 15px;
+    
+  }
+
+  /* Efecto en el boton */
+.boton:hover{
+    background:#ff4c28;
+  }
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:25px;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #ffffff 60%, #ffffff 40.1%);
+    flex-direction: row;
+    margin-left: 190px;
+    margin-top: 25px;
+}
+.inputBox{
+    margin:15px 0;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    height: 50px;
+    margin-top: 20px;
+    filter: drop-shadow(0 0 5px #8a8a8a);
+}
+
+
+img {
+    max-width: 800px;
+    max-height: 400px;
+    margin: 10px;
+  }
+
+.col2{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+
+}
+.col1{
+    justify-content: space-around;
+    margin: 50px;
+    padding: 50px;
+}
