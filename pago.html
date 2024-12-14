@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/pago.css">
+
+    <title>Procesando pago</title>
+
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+
+        <!-- formulario pide info del user -->
+        
+        <form action="">
+            <!-- Cabecera -->
+            <header class="header">
+                <h1>REGISTRA TUS DATOS</h1>
+            </header>
+
+            <div class="card">
+                <!-- se divide el panel en dos columnas -->
+
+                <div class="col">
+
+                    <h3 class="title">DETALLES DEL PAGO</h3>
+
+                    <div class="inputBox">
+                        <span>Nombres completos :</span>
+                        <input type="text" placeholder="Juan Perez">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input type="email" placeholder="ejemplo@ejemplo.com">
+                    </div>
+                    <div class="inputBox">
+                        <span>Dirección :</span>
+                        <input type="text" placeholder="Distrito - Calle - Número">
+                    </div>
+                    <div class="inputBox">
+                        <span>Ciudad :</span>
+                        <input type="text" placeholder="Lima">
+                    </div>
+
+                    <!-- Flex para ordenar horizontal -->
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>Departamento :</span>
+                            <input type="text" placeholder="La Libertad">
+                        </div>
+                        <div class="inputBox">
+                            <span>Código postal :</span>
+                            <input type="text" placeholder="123 456">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <h3 class="title">PAGO</h3>
+
+                    <div class="inputBox">
+                        <span>Tarjetas aceptadas :</span>
+                        <img src="images/card_img.png" alt="">
+                    </div>
+                    <div class="inputBox">
+                        <span>Nombre de la tarjeta :</span>
+                        <input type="text" placeholder="Juan Perez">
+                    </div>
+                    <div class="inputBox">
+                        <span>Número de tarjeta :</span>
+                        <input type="number" placeholder="1111-2222-3333-4444">
+                    </div>
+                    <div class="inputBox">
+                        <span>Fecha de vencimiento :</span>
+                        <input type="text" placeholder="12/28">
+                    </div>
+
+                    <!-- Flex para ordenar horizontal -->
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>CVV :</span>
+                            <input type="text" placeholder="1234">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Envia los datos, texto en el boton-->
+            <input type="submit" value="Procesar pago" class="boton">
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
