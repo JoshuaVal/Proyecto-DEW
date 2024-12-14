@@ -23,12 +23,16 @@
     flex-wrap: wrap;
 }
 
-#nav h1{
+#nav .title-nav a{
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
     font-size: 50px;
-    color: #000000;
+    color: #FF5B00;
+    margin: 19.92px 0;
+    line-height: 23.44px;
+
 }
+
 
 #nav a{
     font-family: "Roboto", sans-serif;
