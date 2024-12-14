@@ -10,6 +10,71 @@
   transition: all .2s linear;
 }
 
+/*Nav*/
+
+
+
+#nav{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#nav h1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    color: #000000;
+}
+
+#nav a{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #000000;
+    line-height: 23.44px;
+}
+
+.button-nav {
+    background-color: #F6762C;
+    width: 175px;
+    height: 49px;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 23.44px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+header #nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+header #nav #links-nav a{
+    margin: 0px 20px;
+}
+
+#section-container {
+    display: flex;
+    flex-direction:row;
+    margin-left: 190px;
+    margin-top: 25px;
+    
+}
+
+
+
 /* cabecera del form */
 .header {
   background-color: #27ae60;
@@ -29,7 +94,7 @@
   align-items: center;
   padding:25px;
   min-height: 100vh;
-  background: linear-gradient(90deg, #403685 60%, #403685 40.1%);
+  background: linear-gradient(90deg, #ffffff 60%, #ffffff 40.1%);
 }
 
 .contenedor form{
