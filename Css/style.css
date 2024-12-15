@@ -4,6 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Joti+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+* {
+    cursor: url('../img/cursor.png'), auto;
+}
+
 @media (min-width: 768px) {
     .contenedor {
     display: flex;
@@ -27,6 +32,7 @@
 }
 
 body{
+    max-width: 100%;
     height: 100vh;
     margin: 0;
     color: #F9F9F9;
@@ -159,11 +165,61 @@ header #nav #links-nav a{
 }
 
 #img-container {
-    flex: 2;
-    max-width: 600px;
-    margin: 10px;
-    margin-right: 180px;
-    top: 24px;
+    width: 580px;
+    height: 600px;
+    margin-right: 200px;
+    overflow: hidden;
+    padding: 45px;
+    position: relative;
+}
+
+.imagenes-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.imagenes-slider img {
+    position: absolute; /* Coloca todas las imágenes una encima de la otra */
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajusta el tamaño de las imágenes */
+    opacity: 0; /* Todas las imágenes son invisibles por defecto */
+    animation: fade 20s infinite; /* Aplica la animación a cada imagen */
+}
+
+.imagenes-slider img:nth-child(1) {
+    animation-delay: 0s; /* Primera imagen empieza de inmediato */
+}
+
+.imagenes-slider img:nth-child(2) {
+    animation-delay: 5s; /* Segunda imagen aparece después de 5s */
+}
+
+.imagenes-slider img:nth-child(3) {
+    animation-delay: 10s; /* Tercera imagen aparece después de 10s */
+}
+
+.imagenes-slider img:nth-child(4) {
+    animation-delay: 15s; /* Cuarta imagen aparece después de 15s */
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0; /* Imagen invisible */
+    }
+    10% {
+        opacity: 1; /* Imagen aparece */
+    }
+    25% {
+        opacity: 1; /* Imagen permanece visible */
+    }
+    35% {
+        opacity: 0; /* Imagen desaparece */
+    }
+    100% {
+        opacity: 0; /* Imagen invisible hasta el siguiente ciclo */
+    }
 }
 
 
@@ -212,103 +268,121 @@ header {
     font-family: Montserrat;
     font-size: 50px;
     font-weight: 800;
-    text-align: center;
     color: #FF8000;
 }
 
+/* Contenedor de tarjetas */
 #menu-container {
     display: flex; 
     flex-wrap: wrap; 
-    flex-direction: row;
-    gap: 10px; 
+    gap: 50px; 
     justify-content: center; 
-    padding: 0px;
-    gap: 50px;
-    top: 45px;
 }
 
 .menu-card {
-    
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    text-align: left; 
-    padding: 16px;
+    position: relative; /* Necesario para posicionar el overlay */
     width: 256px; 
     height: 352px; 
-    position: relative; /
+    border-radius: 8px;
     overflow: hidden; 
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
-    
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
-  .menu-card img{ 
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
+.menu-card img { 
+    width: 100%; 
+    height: 100%; 
     object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+
+/* Overlay: inicialmente oculto */
+.menu-card .overlay {
     position: absolute; 
     top: 0;
     left: 0;
-    filter: opacity(0.82);
-    
-}
-
-.menu-card h4,
-.menu-card span {
-    font-family: Montserrat, sans-serif;
-    text-align: left;
-    color: #FFFFFF;
-}
-
-.menu-card h4 {
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 46.32px;
-    color: #FFFDD0;
-}
-
-.menu-card.complementos h4 {
-    font-size: 20px; /* Tamaño más pequeño para la tarjeta de complementos */
-}
-
-.menu-card .price-container {
-    display: flex;
-    flex-direction: row; 
-    align-items: baseline;
-    gap: 2px;
-}
-
-.menu-card .precio {
-    font-size: 34px;
-    font-weight: 700;
-    color: #F5F5DC; 
-}
-
-.menu-card .order-btn {
-    background-color: #F6762C;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
     color: #fff;
+    display: flex; 
+    flex-direction: column; /* Elementos en columna */
+    justify-content: center; 
+    align-items: center; /* Centrado horizontal */
+    opacity: 0; /* Oculto al inicio */
+    transition: opacity 0.3s ease; /* Animación suave */
+    padding: 20px; /* Espaciado interno */
+    gap: 10px; /* Espaciado entre los elementos del overlay */
+}
+
+.menu-card:hover .overlay {
+    opacity: 1; /* Aparece al pasar el mouse */
+}
+.menu-card .overlay .price-wrapper {
+    display: flex;
+    flex-direction: row; /* Alinear "desde" y el precio en una fila */
+    gap: 5px;
+    font-size: 20px;
+    color: #FFFDD0; /* Color claro */
+    align-items: baseline; /* Alinear verticalmente */
+}
+
+.menu-card .overlay .subname {
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFDD0; /* Estilo para "desde" */
+}
+
+.menu-card .overlay .order-btn {
+    background-color: #F6762C;
+    color: #FFFFFF;
     border: none;
     border-radius: 8px;
-    padding: 8px 16px; 
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
     cursor: pointer;
     font-size: 16px;
     font-weight: 800;
-    transition: background-color 0.3s ease;
-    width: 65%; 
-    text-align: left; 
-    margin-top: 60px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    margin-top: 20px; /* Espaciado entre el botón y el resto del contenido */
 }
 
-.menu-card .order-btn:hover {
+/* Efecto al pasar el mouse sobre el botón */
+.menu-card .overlay .order-btn:hover {
     background-color: #D15A20;
+    transform: scale(1.05); /* Un ligero efecto de zoom */
 }
 
-.menu-card:hover {
-    transform: scale(1.05);
+.overlay h4, .overlay span {
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    margin: 5px 0;
 }
+
+.overlay h4 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.overlay span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu-card .overlay .precio {
+    font-size: 34px; /* Tamaño del texto */
+    font-weight: 700; /* Negrita */
+    color: #F5F5DC; /* Color beige */
+    margin-top: 10px; /* Espaciado superior */
+    text-align: center; /* Centrado del texto */
+}
+
+/* Efecto de zoom en la imagen */
+.menu-card:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño ligeramente al hacer hover */
+}
+
 
 
 #container-recomendacion {
@@ -316,22 +390,21 @@ header {
     flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas según sea necesario */
     gap: 30px; /* Espacio entre las tarjetas */
     justify-content: space-between; /* Distribuir las tarjetas uniformemente */
-    padding: 0px;
+    padding: 0;
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     width: 1020px;
     height: 800px;
-    margin-bottom: 50px;
-    
+    margin-bottom: 80px;
+   
 }
 
 .recomend h1 {
-
     font-family: Montserrat;
     font-size: 50px;
     font-weight: 800;
     text-align: center;
     color: #FF8000;
-    bottom: 80px;
+    bottom: 100px;
 }
 
 .recomend h2 {
@@ -341,9 +414,81 @@ header {
     line-height: 27.08px;
     letter-spacing: 0.005em;
     text-align: center;
-    bottom: 80px;
+    color: #1C1C1C;
+    bottom: 100px;
+}
+
+.card {
+    width: calc(25% - 30px); /* Ajusta el tamaño de las tarjetas según sea necesario */
+    background-color: white; /* Fondo blanco para las tarjetas */
+    border-radius: 10px; /* Redondea las esquinas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para las tarjetas */
+    overflow: hidden; /* Evita que el contenido se salga de las tarjetas */
+}
 
 
+
+  .card:hover {
+    transform: scale(1.1); /* Aumenta el tamaño en un 10% al pasar el cursor */
+    transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+    box-shadow: 0 12px 16px -10px rgba(0, 0, 0, 0.25);
+  }
+
+.imagenes {
+    position: relative; /* Para posicionar los elementos sobre la imagen */
+}
+
+.imagenes img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block;
+}
+
+.card-content {
+    position: absolute; /* Pone los textos sobre la imagen */
+    bottom: 0; /* Alinea los textos en la parte inferior */
+    left: 0; /* Alinea los textos a la izquierda */
+    width: 100%; /* Asegura que los textos ocupen todo el ancho */
+    margin-top: 0px;
+    padding: 10px; /* Añade espacio alrededor del contenido */
+    text-align: left; /* Alinea el texto a la izquierda */
+    
+}
+
+.card-content h4 {
+    font-family: Montserrat;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    color: black; 
+    margin-bottom: 12px;
+}
+
+.card-content span {
+    display: block;
+    font-family: Montserrat;
+    color: black; /* Color del subtítulo */
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 18px;
+    
+    
+    
+}
+
+
+
+.card-content p.price {
+    font-family: Montserrat;
+    font-weight: 700;
+    color: red; /* Color rojo para el precio */
+    text-align: left; /* Alinea el texto a la izquierda */
+    font-family: Montserrat;
+    font-size: 20px;
+    line-height: 27.08px;
+    letter-spacing: 0.005em;
+    
 }
 
 
@@ -374,15 +519,12 @@ header {
     padding: 10px;
 }
 
-.card-content h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
 .card-content p {
     font-size: 14px;
     color: #666;
+    font-family: Montserrat;
+    
+    font-weight: 400;
 }
 
 .title-review {
@@ -493,31 +635,42 @@ header {
     bottom: 0px;
 }
 
- .descarga h1 {
-    color:#FFCF23F0;
+.descarga h1 {
+    color: #FFCF23F0;
     margin-bottom: 130px;
     font-family: Montserrat;
     font-size: 83px;
     font-weight: 700;
     line-height: 101.18px;
+    animation: blink 1.5s infinite;
+}
 
- }
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
 
- .descarga button {
-
+.descarga button {
     width: 237px;
     height: 64px;
     margin-right: 80px;
-    border-radius: 50px ;
+    border-radius: 50px;
     font-family: Montserrat;
     font-size: 23px;
     font-weight: 800;
     line-height: 28.04px;
     letter-spacing: 0.115em;
     color: #FF5B00;
-    border:none;
+    border: none;
     cursor: pointer;
- }
+    
+}
+
+
 
  #footer {
     display: flex;

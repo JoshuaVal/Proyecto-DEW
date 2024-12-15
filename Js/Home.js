@@ -1,4 +1,4 @@
-import {cambiarTextoPorImagen,menuImagenes, mostrarRecomendaciones,cambiarTextoPorImg, generarFooter, showNextImage} from "./utils.js";
+import {cambiarTextoPorImagen,menuImagenes, mostrarRecomendaciones,cambiarTextoPorImg, generarFooter} from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", cargaInicial());
 
@@ -9,5 +9,6 @@ function cargaInicial() {
     mostrarRecomendaciones();
     generarFooter();
     cambiarTextoPorImg();
-    showNextImage();
+    
+    
 }

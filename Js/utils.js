@@ -1,23 +1,3 @@
-function showNextImage() {
-    const images = document.querySelectorAll('#img-container img');
-    let index = 0;
-
-    function showNextImage() {
-        // Oculta la imagen actual
-        images[index].classList.remove('active');
-        images[index].classList.add('hidden');
-
-        index = (index + 1) % images.length;
-
-        // Muestra la nueva imagen
-        images[index].classList.remove('hidden');
-        images[index].classList.add('active');
-    }
-
-    setInterval(showNextImage, 3000); // Cambia la imagen cada 3 segundos
-}
-
-
 
 function cambiarTextoPorImagen() {
     const socialLinks = document.querySelectorAll(".iconos");
@@ -33,61 +13,76 @@ function cambiarTextoPorImagen() {
 
 }
 
-
 function menuImagenes() {
     const menus = [
         { name: "BURGER", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "./img/buurgessaa.png" },
         { name: "PIZZA", subname: "desde", precio: "S/.30.90", botonName: "Pedido", imagen: "./img/piiiiza.png" },
         { name: "OTROS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "./img/shaaawa.png" },
-        { name: "COMPLEMENTOS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "./img/compleemento.png" },
+        { name: "SALADS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "./img/compleemento.png" },
         { name: "BEBIDAS", subname: "desde", precio: "S/.5.99", botonName: "Pedido", imagen: "./img/bebiiiida.png" },
     ];
 
     const menuContainer = document.getElementById('menu-container');
-    //aqui estoy que llamo a ese id 
 
     menus.forEach(menu => {
-
+        // Crear la tarjeta de menú
         const menuCard = document.createElement('div');
         menuCard.classList.add('menu-card');
-        //aqui se va creando lo que me dijo de div y demas
+
+        // Crear la imagen
         const img = document.createElement('img');
         img.src = menu.imagen;
         img.alt = menu.name;
+
+        // Crear el overlay
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+
+        // Crear el título
         const title = document.createElement('h4');
         title.textContent = menu.name;
-        const priceContainer = document.createElement('span');
-        priceContainer.classList.add('price-container');
+
+        // Crear el contenedor del precio con "desde"
+        const priceWrapper = document.createElement('div');
+        priceWrapper.classList.add('price-wrapper');
+        
         const subname = document.createElement('span');
-        subname.textContent = menu.subname;
+        subname.classList.add('subname');
+        subname.textContent = menu.subname; // "desde"
+        
         const precio = document.createElement('span');
         precio.classList.add('precio');
-        precio.textContent = menu.precio;
+        precio.textContent = menu.precio; // "S/.10.90"
 
+        priceWrapper.appendChild(subname);
+        priceWrapper.appendChild(precio);
+
+        // Crear el botón
         const button = document.createElement('button');
         button.classList.add('order-btn');
         button.textContent = menu.botonName;
 
-        //no se si asi era
-        priceContainer.appendChild(subname);
-        priceContainer.appendChild(precio);
+        // Agregar elementos al overlay
+        overlay.appendChild(title);
+        overlay.appendChild(priceWrapper); // Contenedor del precio
+        overlay.appendChild(button);
+
+        // Agregar elementos a la tarjeta
         menuCard.appendChild(img);
-        menuCard.appendChild(title);
-        menuCard.appendChild(priceContainer);
-        menuCard.appendChild(button);
+        menuCard.appendChild(overlay);
 
-
+        // Agregar la tarjeta al contenedor
         menuContainer.appendChild(menuCard);
     });
 }
 
 function mostrarRecomendaciones() {
     const recomendaciones = [
-        { titulo: "Título 1", descripcion: "Descripción breve del plato 1.", imagen: "./img/Ensalada.png" },
-        { titulo: "Título 2", descripcion: "Descripción breve del plato 2.", imagen: "./img/Burgmagic.png" },
-        { titulo: "Título 3", descripcion: "Descripción breve del plato 3.", imagen: "./img/Patatas.png" },
-        { titulo: "Título 4", descripcion: "Descripción breve del plato 4.", imagen: "./img/Shawarma.png" },
-        { titulo: "Título 5", descripcion: "Descripción breve del plato 5.", imagen: "./img/Pepperoni.png" }
+        { titulo: "5.9", subtitulo: "Ensalada Cesar", descripcion: "Fresca ensalada romana.", precio: "S/.18.50", imagen: "./img/Ensalada.png" },
+        { titulo: "7.5", subtitulo: "Burger Magic", descripcion: "Una hamburguesa jugosa con carne.", precio: "S/.10.90", imagen: "./img/Burgmagic.png" },
+        { titulo: "5.7", subtitulo: "Patatas Fritas", descripcion: "Papas cortadas en tiras y fritas.", precio: "S/.8.90", imagen: "./img/Patatas.png" },
+        { titulo: "4.8", subtitulo: "Shawarma", descripcion: "Finas láminas de carne marinada.", precio: "S/.15.50", imagen: "./img/Shawarma.png" },
+        { titulo: "7.8", subtitulo: "Pepperoni", descripcion: "Una pizza clásica pepperoniana.", precio: "S/.29.90", imagen: "./img/Pepperoni.png" }
     ];
 
     const containerRecomendacion = document.getElementById('container-recomendacion');
@@ -102,27 +97,43 @@ function mostrarRecomendaciones() {
 
         const img = document.createElement('img');
         img.src = rec.imagen;
-        img.alt = `Descripción imagen ${rec.titulo}`;
+        img.alt = `Imagen de ${rec.titulo}`;
 
         const cardContent = document.createElement('div');
         cardContent.classList.add('card-content');
 
-        const titulo = document.createElement('h3');
+        const titulo = document.createElement('h4');
         titulo.textContent = rec.titulo;
+
+        const subtitulo = document.createElement('span');
+        subtitulo.textContent = rec.subtitulo;
 
         const descripcion = document.createElement('p');
         descripcion.textContent = rec.descripcion;
 
+        const precio = document.createElement('p');
+        precio.textContent = rec.precio;
+        precio.classList.add('price'); // Asegúrate de añadir esta clase
 
-        imagenes.appendChild(img);
+        // Ajusta el color del precio
+
+        // Agregar elementos al contenido de la tarjeta
         cardContent.appendChild(titulo);
+        cardContent.appendChild(subtitulo);
         cardContent.appendChild(descripcion);
+        cardContent.appendChild(precio);
+
+        // Agregar imagen y contenido a la tarjeta
+        imagenes.appendChild(img);
         card.appendChild(imagenes);
         card.appendChild(cardContent);
 
+        // Agregar la tarjeta al contenedor
         containerRecomendacion.appendChild(card);
     });
 }
+
+
 
 function cambiarTextoPorImg() {
     const socialLinks = document.querySelectorAll(".iconos2");
@@ -200,5 +211,4 @@ function generarFooter() {
 }
 
 
-
-export { cambiarTextoPorImagen, menuImagenes, mostrarRecomendaciones,cambiarTextoPorImg ,generarFooter,showNextImage}
+export { cambiarTextoPorImagen, menuImagenes, mostrarRecomendaciones,cambiarTextoPorImg ,generarFooter }
