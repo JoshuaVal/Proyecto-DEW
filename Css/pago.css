@@ -1,182 +1,182 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
 /* aplica estilos a todo */
-*{
+* {
   font-family: 'Poppins', sans-serif;
-  margin:0 auto; padding:0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  outline: none; border: none;
+  outline: none;
+  border: none;
   text-transform: capitalize;
   transition: all .2s linear;
 }
 
-/*Nav*/
+/*barra de navegacion*/
 
+#nav {
 
-
-#nav{
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px;
 }
 
 #nav .title-nav a{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 50px;
-    color: #FF5B00;
-    margin: 19.92px 0;
-    line-height: 23.44px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+  color: #FF5B00;
+  margin: 19.92px 0;
+  line-height: 23.44px;
 
 }
 
 
-#nav a{
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    text-decoration: none;
-    color: #000000;
-    line-height: 23.44px;
+#nav a {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #000000;
+  line-height: 23.44px;
 }
 
 .button-nav {
-    background-color: #F6762C;
-    width: 175px;
-    height: 49px;
-    border-radius: 8px;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    line-height: 23.44px;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
+  background-color: #F6762C;
+  width: 175px;
+  height: 49px;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 23.44px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 header #nav {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 
-header #nav #links-nav a{
-    margin: 0px 20px;
+header #nav #links-nav a {
+  margin: 0px 20px;
 }
 
-#section-container {
+/* #section-container {
     display: flex;
     flex-direction:row;
     margin-left: 190px;
     margin-top: 25px;
     
-}
+} */
 
 
 
 /* cabecera del form */
 .header {
   background-color: #27ae60;
-  color: #ffffff;       
-  padding: 15px;         
-  text-align: center;    
-  border-radius: 8px;    
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
   margin-bottom: 15px;
   font-size: 12px;
 }
 
 
 /* ocupe la altura de ventana 'min-height' */
-.contenedor{
+.contenedor {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:25px;
+  padding: 25px;
   min-height: 100vh;
   background: linear-gradient(90deg, #ffffff 60%, #ffffff 40.1%);
 }
 
-.contenedor form{
-  padding:20px;
-  width:700px;
+.contenedor form {
+  padding: 20px;
+  width: 700px;
   background: #fff;
-  box-shadow: 0 5px 10px rgba(0,0,0,.1);
-  border-radius: 10px;    
-  padding: 20px;      
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+  border-radius: 10px;
+  padding: 20px;
   background-color: #fff;
-  
+
 }
 
-.contenedor form .card{
+.contenedor form .card {
   display: flex;
   flex-wrap: wrap;
-  gap:15px;
+  gap: 15px;
 }
 
-.contenedor form .card .col{
-  flex:1 1 250px;
+.contenedor form .card .col {
+  flex: 1 1 250px;
 }
 
-.contenedor form .card .col .title{
+.contenedor form .card .col .title {
   font-size: 20px;
-  color:#333;
+  color: #333;
   padding-bottom: 5px;
   text-transform: uppercase;
 }
 
-.contenedor form .card .col .inputBox{
-  margin:15px 0;
+.contenedor form .card .col .inputBox {
+  margin: 15px 0;
 }
 
-.contenedor form .card .col .inputBox span{
+.contenedor form .card .col .inputBox span {
   margin-bottom: 10px;
   display: block;
 }
 
-.contenedor form .card .col .inputBox input{
+.contenedor form .card .col .inputBox input {
   width: 100%;
-  border:1px solid #ccc;
-  padding:10px 15px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
   font-size: 15px;
   text-transform: none;
 }
 
-.contenedor form .card .col .inputBox input:focus{
-  border:1px solid #000;
-}
+/* .contenedor form .card .col .inputBox input:focus {
+  border: 1px solid #000;
+} */
 
-.contenedor form .card .col .flex{
+.contenedor form .card .col .flex {
   display: flex;
-  gap:15px;
+  gap: 15px;
 }
 
-.contenedor form .card .col .flex .inputBox{
+.contenedor form .card .col .flex .inputBox {
   margin-top: 5px;
 }
 
-.contenedor form .card .col .inputBox img{
+.contenedor form .card .col .inputBox img {
   height: 34px;
   margin-top: 5px;
   filter: drop-shadow(0 0 1px #000);
 }
 
-.contenedor form .boton{
+.contenedor form .boton {
   width: 100%;
-  padding:12px;
+  padding: 12px;
   font-size: 17px;
   background: #27ae60;
-  color:#fff;
+  color: #fff;
   margin-top: 5px;
   cursor: pointer;
 }
 
 /* Efecto en el boton */
-.contenedor form .boton:hover{
+.contenedor form .boton:hover {
   background: #2b2bef;
 }
-
