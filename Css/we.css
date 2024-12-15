@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
 /* aplica estilos a todo */
-*{
-  font-family: 'Poppins', sans-serif;
-  margin:0; padding:0;
-  box-sizing: border-box;
-  outline: none; border: none;
-  text-transform: capitalize;
-  transition: all .2s linear;
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
 }
+
 /*barra de navegacion*/
 
-#nav{
-    
+#nav {
+
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -21,7 +24,7 @@
     padding: 15px;
 }
 
-#nav .title-nav a{
+#nav .title-nav a {
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
     font-size: 50px;
@@ -32,7 +35,7 @@
 }
 
 
-#nav a{
+#nav a {
     font-family: "Roboto", sans-serif;
     font-size: 20px;
     font-weight: 800;
@@ -63,41 +66,51 @@ header #nav {
 }
 
 
-header #nav #links-nav a{
+header #nav #links-nav a {
     margin: 0px 20px;
 }
 
 
-
-.boton{
+.boton {
     width: 100%;
-    padding:12px;
+    padding: 12px;
     font-size: 17px;
-    background:#F6762C;
-    color:#fff;
+    background: #F6762C;
+    color: #fff;
     margin-top: 5px;
     padding: 15px;
-    
-  }
 
-  /* Efecto en el boton */
-.boton:hover{
-    background:#ff4c28;
-  }
+}
 
-.contenedor{
+/* Efecto en el boton */
+.boton:hover {
+    background: #ff4c28;
+}
+
+
+
+.boton a {
+    text-decoration: none; 
+    color: white;
+    font-weight: bold;  
+}
+
+
+
+.contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:25px;
+    padding: 25px;
     min-height: 100vh;
     background: linear-gradient(90deg, #ffffff 60%, #ffffff 40.1%);
     flex-direction: row;
     margin-left: 190px;
     margin-top: 25px;
 }
-.inputBox{
-    margin:15px 0;
+
+.inputBox {
+    margin: 15px 0;
     margin-bottom: 10px;
     margin-top: 5px;
     height: 50px;
@@ -105,21 +118,139 @@ header #nav #links-nav a{
     filter: drop-shadow(0 0 5px #8a8a8a);
 }
 
-
-img {
-    max-width: 800px;
+/* images style */
+/* 
+.burguer-part {
+    max-width: 100px;
     max-height: 400px;
-    margin: 10px;
-  }
+    margin: 50px;
+} */
 
-.col2{
+.col2 {
     display: flex;
     flex-direction: column;
     margin: 50px;
 
 }
-.col1{
+
+.col1 {
     justify-content: space-around;
-    margin: 50px;
-    padding: 50px;
+    margin: 30px;
+    padding: 10px;
+}
+
+.contenedor .col1 h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 45px;
+    color: #FF5B00;
+    margin: 20px 0;
+    line-height: 23.44px;
+}
+
+
+.contenedor .col1 p {
+    margin: 100px 0;
+}
+
+
+/* Carousel style */
+/* .carousel {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .carousel-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    
+  } */
+
+.carousel {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    height: 400px;
+}
+
+.carousel-inner {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    
+}
+
+.carousel-item {
+    min-height: 100%;
+    box-sizing: border-box;
+    
+}
+
+.carousel-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    
+}
+
+
+/* Botones de control */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    color: #FF5B00;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control-prev {
+    right: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+    margin: 50px 0;
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: solid #FF5B00;
+}
+
+.carousel-control-prev-icon::before {
+    border-width: 0 3px 3px 0;
+    transform: rotate(225deg);
+}
+
+.carousel-control-next-icon::before {
+    border-width: 0 3px 3px 0;
+    transform: rotate(40deg);
 }
