@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+/* aplica estilos a todo */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: none;
+    transition: all .2s linear;
+}
+
+/*barra de navegacion*/
+
+#nav {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+#nav .title-nav a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+    color: #FF5B00;
+    margin: 19.92px 0;
+    line-height: 23.44px;
+
+}
+
+
+#nav a {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #000000;
+    line-height: 23.44px;
+}
+
+.button-nav {
+    background-color: #F6762C;
+    width: 175px;
+    height: 49px;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 23.44px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+header #nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+header #nav #links-nav a {
+    margin: 0px 20px;
+}
