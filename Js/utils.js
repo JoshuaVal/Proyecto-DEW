@@ -45,11 +45,11 @@ function menuImagenes() {
         // Crear el contenedor del precio con "desde"
         const priceWrapper = document.createElement('div');
         priceWrapper.classList.add('price-wrapper');
-        
+
         const subname = document.createElement('span');
         subname.classList.add('subname');
         subname.textContent = menu.subname; // "desde"
-        
+
         const precio = document.createElement('span');
         precio.classList.add('precio');
         precio.textContent = menu.precio; // "S/.10.90"
@@ -62,6 +62,7 @@ function menuImagenes() {
         button.classList.add('order-btn');
         button.textContent = menu.botonName;
 
+        
         // Agregar elementos al overlay
         overlay.appendChild(title);
         overlay.appendChild(priceWrapper); // Contenedor del precio
@@ -134,21 +135,6 @@ function mostrarRecomendaciones() {
 }
 
 
-
-function cambiarTextoPorImg() {
-    const socialLinks = document.querySelectorAll(".iconos2");
-    socialLinks.forEach((link) => {
-        link.innerHTML = "";
-        const img = document.createElement("img");
-        img.alt = "imagen no disponible";
-        img.src = `../img/${link.title}.png`;
-        img.style.width = "25px";
-        img.style.height = "22px";
-        link.appendChild(img);
-    });
-
-}
-
 function generarFooter() {
     const footer = document.getElementById('footer');
 
@@ -194,12 +180,12 @@ function generarFooter() {
     `;
 
     const socialLinks = document.createElement('ul');
-    socialLinks.classList.add('social-links');
+    socialLinks.classList.add('social-links2');
     socialLinks.innerHTML = `
         <li><a href="#" class="iconos2" target="_blank" title="Facebook">FB</a></li>
         <li><a href="#" class="iconos2" target="_blank" title="Instagram">IG</a></li>
         <li><a href="#" class="iconos2" target="_blank" title="Twitter">X</a></li>
-        <li><a href="#" class="iconos2" target="_blank" title="LinkedIn">X</a></li>
+        <li><a href="#" class="iconos2" target="_blank" title="LinkedIn">Ld</a></li>
     `;
 
     // Añadir todos los elementos al footer
@@ -210,5 +196,37 @@ function generarFooter() {
     footer.appendChild(socialLinks);
 }
 
+function cambiarTextoPorImg() {
+    const socialLinks = document.querySelectorAll(".iconos2");
+    socialLinks.forEach((link) => {
+        link.innerHTML = "";
+        const img = document.createElement("img");
+        img.alt = "imagen no disponible";
+        img.src = `../img/${link.title}.png`;
+        img.style.width = "25px";
+        img.style.height = "22px";
+        link.appendChild(img);
+    });
 
-export { cambiarTextoPorImagen, menuImagenes, mostrarRecomendaciones,cambiarTextoPorImg ,generarFooter }
+}
+
+function textoAutomatico() {
+    const burgerInfos = document.querySelectorAll('.burguer-info'); 
+    let currentIndex = 0; 
+    function showNextInfo() {
+         burgerInfos.forEach((info, index) => { 
+            if (index === currentIndex) { 
+                info.classList.add('active'); 
+            } else { 
+                info.classList.remove('active'); 
+            } 
+        }); 
+        currentIndex = (currentIndex + 1) % burgerInfos.length;
+     } 
+     showNextInfo(); 
+     setInterval(showNextInfo, 5000);
+    }
+
+
+
+    export { cambiarTextoPorImagen, menuImagenes, mostrarRecomendaciones, cambiarTextoPorImg, generarFooter, textoAutomatico}
