@@ -10,6 +10,8 @@
 }
 
 @media (min-width: 768px) {
+
+    
     .contenedor {
         display: flex;
         justify-content: space-between;
@@ -36,6 +38,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #F2F2F2;
+    overflow-x: hidden;
 }
 
 p {
@@ -103,6 +106,7 @@ h1 {
     cursor: pointer;
     text-transform: uppercase;
     animation: fadeIn 2s ease-out;
+    
     
 }
 
