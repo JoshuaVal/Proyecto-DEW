@@ -10,16 +10,14 @@ buttons.forEach(link => {
     });
 });
 
-const enlaces = document.querySelectorAll('#links-nav a'); // Selecciona solo los enlaces dentro del contenedor
+const links = document.querySelectorAll('#links-nav a');
 
-enlaces.forEach(enlace => {
-  enlace.addEventListener('mouseover', () => {
-    enlace.style.color = '#CDCDCD';
-    link.style.transform = 'scale(1.1)';
+links.forEach(link => {
+  link.addEventListener('mouseover', () => {
+    link.style.borderBottom = '2px solid #FF5B00';
   });
 
-  enlace.addEventListener('mouseout', () => {
-    enlace.style.color = 'white';
-    link.style.transform = 'scale(1.1)';
+  link.addEventListener('mouseout', () => {
+    link.style.borderBottom = 'none';
   });
 });
