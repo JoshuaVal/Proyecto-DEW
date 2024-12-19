@@ -15,11 +15,11 @@ function cambiarTextoPorImagen() {
 
 function menuImagenes() {
     const menus = [
-        { name: "BURGER", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "./img/buurgessaa.png" },
-        { name: "PIZZA", subname: "desde", precio: "S/.30.90", botonName: "Pedido", imagen: "./img/piiiiza.png" },
-        { name: "OTROS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "./img/shaaawa.png" },
-        { name: "SALADS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "./img/compleemento.png" },
-        { name: "BEBIDAS", subname: "desde", precio: "S/.5.99", botonName: "Pedido", imagen: "./img/bebiiiida.png" },
+        { name: "BURGER", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "/img/buurgessaa.png" },
+        { name: "PIZZA", subname: "desde", precio: "S/.30.90", botonName: "Pedido", imagen: "/img/piiiiza.png" },
+        { name: "OTROS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "/img/shaaawa.png" },
+        { name: "SALADS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "/img/compleemento.png" },
+        { name: "BEBIDAS", subname: "desde", precio: "S/.5.99", botonName: "Pedido", imagen: "/img/bebiiiida.png" },
     ];
 
     const menuContainer = document.getElementById('menu-container');
