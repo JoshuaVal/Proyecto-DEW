@@ -1,66 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Joti+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Joti+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Joti+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
+/*Reset*/
 * {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-transform: none;
-    transition: all .2s linear;
+  box-sizing: border-box;
+  position: relative;
+  min-width: 0;
 }
 
+body {
+  max-width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #F2F2F2;
+  overflow-x: hidden;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1 {
+  text-wrap: balance;
+}
+
+
+
+/*barra de navegacion*/
+
 #nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 15px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: fadeIn 1.5s ease-out;
+  padding-top: 30px;
 }
 
 #nav .title-nav a {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    font-size: 50px;
-    color: #FF5B00;
-    margin: 19.92px 0;
-    line-height: 23.44px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+  color: #FF5B00;
+  animation: fadeIn 1s ease-out;
+  margin: 19.92px 0;
+  line-height: 23.44px;
+
 }
 
+
 #nav a {
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    text-decoration: none;
-    color: #000000;
-    line-height: 23.44px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #000000;
+  line-height: 23.44px;
+}
+
+@keyframes fadeIn { 
+  0% { 
+      opacity: 0; 
+      transform: translateY(-20px); 
+  } 
+  100% { 
+      opacity: 1; 
+      transform: translateY(0); 
+  }
 }
 
 .button-nav {
-    background-color: #F6762C;
-    width: 175px;
-    height: 49px;
-    border-radius: 8px;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    line-height: 23.44px;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
+  background-color: #F6762C;
+  width: 175px;
+  height: 49px;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 23.44px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  animation: fadeIn 2s ease-out;
 }
 
 header #nav {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
+
 header #nav #links-nav a {
-    margin: 0px 20px;
+  margin: 0px 20px;
 }
 
 .boton {
@@ -93,7 +132,7 @@ header #nav #links-nav a {
     align-items: center;
     padding: 25px;
     min-height: 100vh;
-    background: linear-gradient(90deg, #ffffff 60%, #ffffff 40.1%);
+    background-color: #F2F2F2;
     flex-direction: row;
     margin-left: 190px;
     margin-top: 25px;
@@ -164,7 +203,7 @@ header #nav #links-nav a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #F2F2F2;
     color: #FF5B00;
     border: none;
     cursor: pointer;
