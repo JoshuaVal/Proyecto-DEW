@@ -15,11 +15,11 @@ function cambiarTextoPorImagen() {
 
 function menuImagenes() {
     const menus = [
-        { name: "BURGER", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "/img/buurgessaa.png" },
-        { name: "PIZZA", subname: "desde", precio: "S/.30.90", botonName: "Pedido", imagen: "/img/piiiiza.png" },
-        { name: "OTROS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "/img/shaaawa.png" },
-        { name: "SALADS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "/img/compleemento.png" },
-        { name: "BEBIDAS", subname: "desde", precio: "S/.5.99", botonName: "Pedido", imagen: "/img/bebiiiida.png" },
+        { name: "BURGER", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "/img/buurgessaa.png", link: "menu.html" },
+        { name: "PIZZA", subname: "desde", precio: "S/.30.90", botonName: "Pedido", imagen: "/img/piiiiza.png", link: "pizzas.html" },
+        { name: "OTROS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "/img/shaaawa.png", link: "otros.html" },
+        { name: "SALADS", subname: "desde", precio: "S/.10.90", botonName: "Pedido", imagen: "/img/compleemento.png", link: "complementos.html" },
+        { name: "BEBIDAS", subname: "desde", precio: "S/.5.99", botonName: "Pedido", imagen: "/img/bebiiiida.png",link: "bebidas.html" },
     ];
 
     const menuContainer = document.getElementById('menu-container');
@@ -62,6 +62,7 @@ function menuImagenes() {
         button.classList.add('order-btn');
         button.textContent = menu.botonName;
 
+        button.addEventListener('click', () => { window.location.href = menu.link; });
         
         // Agregar elementos al overlay
         overlay.appendChild(title);
