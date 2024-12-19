@@ -55,9 +55,103 @@
     text-transform: uppercase;
 }
 
-/* Imagen */
-div.header-col1 div.header-col img {
+/**/
+
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .contenedor {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
     display: flex;
-    align-items: center;
-    image-orientation: from-image;
-}
+    justify-content: space-between;
+  }
+  
+  .contenedor-col1,
+  .contenedor-col2 {
+    width: 45%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .header-col img {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+  
+  .col1 ul {
+    list-style: none;
+    padding: 5px;
+  }
+  
+  .col1 li {
+    margin-bottom: 15px;
+  }
+  
+  .col1 h3 {
+    margin-bottom: 10px;
+  }
+  
+  .col1 button.boton {
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .col1 button.boton a{
+    color: white;
+    text-decoration: none;
+  }
+
+  .col2 h3 {
+    margin-top: 15px;
+  }
+  
+  .col2 ul {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .inputBox {
+    margin-bottom: 15px;
+  }
+  
+  .inputBox label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .inputBox input,
+  .inputBox select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .contenedor-col2 button {
+    background-color: #FF5B00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+  }

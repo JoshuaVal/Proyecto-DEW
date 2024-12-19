@@ -23,13 +23,15 @@
         </nav>
     </header>
     <div class="contenedor">
-        <div class="header">
+        <header class="header">
             <h1>Ordena tu pedido</h1>
-        </div>
-        <div class="contenedor-col1">
+        </header>
+
+        <section class="contenedor-col1">
             <div class="header-col">
-                <img src="img/pizza-pedido.png" alt="pedido-img">
+                <img src="img/pizza-pedido.png" alt="Imagen de pizza pedido" />
             </div>
+
             <div class="col1">
                 <h3><b>Detalle del Pedido</b></h3>
                 <ul>
@@ -40,46 +42,47 @@
                 </ul>
                 <button class="boton"><a href="menu.html">PAGAR</a></button>
             </div>
+
             <div class="col2">
                 <h3>Total: S/. 181.00</h3>
                 <ul>
                     <li>Delivery - S/.18.00</li>
                 </ul>
             </div>
-        </div>
-        <div class="contenedor-col2">
+        </section>
+
+        <section class="contenedor-col2">
             <h3>Seleccionar Pedido</h3>
-            <p>Seleccionar tamaño:</p>
-            <div class="inputBox">
-                <input type="text" placeholder="Buscar platillos">
-            </div>
-            <button>Seleccionar</button>
 
-            <p>Seleccionar tipo:</p>
             <div class="inputBox">
-                <input type="text" placeholder="Buscar tipo">
+                <label for="platillo">Seleccionar tamaño:</label>
+                <input type="text" id="platillo" placeholder="Buscar platillos" />
+                <button>Seleccionar</button>
             </div>
-            <button>Seleccionar</button>
 
-            <p>Seleccionar tamaño:</p>
             <div class="inputBox">
-                <input type="text" placeholder="Buscar tamaño">
+                <label for="tipo">Seleccionar tipo:</label>
+                <input type="text" id="tipo" placeholder="Buscar tipo" />
+                <button>Seleccionar</button>
             </div>
-            <button>Seleccionar</button>
 
-            <p>Seleccionar cantidad:</p>
             <div class="inputBox">
-                <input type="number" placeholder="Buscar cantidad">
+                <label for="tamano">Seleccionar tamaño:</label>
+                <input type="text" id="tamano" placeholder="Buscar tamaño" />
+                <button>Seleccionar</button>
             </div>
-            <button>Seleccionar</button>
 
-            <p>Delivery:</p>
             <div class="inputBox">
-                <input type="text" placeholder="Selecciona tu ubicación en el mapa">
+                <label for="cantidad">Seleccionar cantidad:</label>
+                <input type="number" id="cantidad" placeholder="Buscar cantidad" />
+                <button>Seleccionar</button>
             </div>
-            <button>IR</button>
-        </div>
+
+            <div class="inputBox">
+                <label for="ubicacion">Delivery:</label>
+                <input type="text" id="ubicacion" placeholder="Selecciona tu ubicación en el mapa" />
+                <button>IR</button>
+            </div>
+        </section>
     </div>
-    <!-- <script type="module" src="js/carousel.js"></script> -->
-</body>
 </html>
