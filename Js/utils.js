@@ -79,11 +79,12 @@ function menuImagenes() {
 
 function mostrarRecomendaciones() {
     const recomendaciones = [
-        { titulo: "5.9", subtitulo: "Ensalada Cesar", descripcion: "Fresca ensalada romana.", precio: "S/.18.50", imagen: "./img/Ensalada.png" },
-        { titulo: "7.5", subtitulo: "Burger Magic", descripcion: "Una hamburguesa jugosa con carne.", precio: "S/.10.90", imagen: "./img/Burgmagic.png" },
-        { titulo: "5.7", subtitulo: "Patatas Fritas", descripcion: "Papas cortadas en tiras y fritas.", precio: "S/.8.90", imagen: "./img/Patatas.png" },
-        { titulo: "4.8", subtitulo: "Shawarma", descripcion: "Finas láminas de carne marinada.", precio: "S/.15.50", imagen: "./img/Shawarma.png" },
-        { titulo: "7.8", subtitulo: "Pepperoni", descripcion: "Una pizza clásica pepperoniana.", precio: "S/.29.90", imagen: "./img/Pepperoni.png" }
+        { titulo: "5.9", subtitulo: "Ensalada Cesar", descripcion: "Fresca ensalada romana.", precio: "S/.18.50", imagen: "./img/Ensalada.png", overlayText:"Una jugosa hamburguesa acompañada de queso derretido, todo en un suave pan.¡Una explosión de sabor en cada bocado!" },
+        { titulo: "7.5", subtitulo: "Burger Magic", descripcion: "Una hamburguesa jugosa con carne.", precio: "S/.10.90", imagen: "./img/Burgmagic.png", overlayText:"Frescura en cada bocado con lechuga romana, crutones dorados y aderezo César cremoso." },
+        { titulo: "5.7", subtitulo: "Patatas Fritas", descripcion: "Papas cortadas en tiras y fritas.", precio: "S/.8.90", imagen: "./img/Patatas.png", overlayText:"¡Cruzadas y doradas! Perfectas para picar o acompañar cualquier plato." },
+        { titulo: "4.8", subtitulo: "Shawarma", descripcion: "Finas láminas de carne marinada.", precio: "S/.15.50", imagen: "./img/Shawarma.png", overlayText:"Carne marinada y asada, envuelta en pan pita con vegetales y salsa de yogur. ¡Irresistible!" },
+        { titulo: "7.8", subtitulo: "Pepperoni", descripcion: "Una pizza clásica pepperoniana.", precio: "S/.29.90", imagen: "./img/Pepperoni.png", overlayText:" Clásica y deliciosa, cubierta con salsa de tomate, mozzarella y rodajas de pepperoni picante." },
+        { titulo: "7.6", subtitulo: "Broaster Burguer", descripcion: "Un pollo crocante original.", precio: "S/.20.00", imagen: "./img_menu/burguer4.png", overlayText:"Pollo crujiente broaster en un pan suave con lechuga, tomate y salsa especial. ¡Sabor único!"},
     ];
 
     const containerRecomendacion = document.getElementById('container-recomendacion');
@@ -99,6 +100,17 @@ function mostrarRecomendaciones() {
         const img = document.createElement('img');
         img.src = rec.imagen;
         img.alt = `Imagen de ${rec.titulo}`;
+
+        const overlay = document.createElement('div'); 
+        overlay.classList.add('overlay'); 
+        
+        const overlayText = document.createElement('div'); 
+        overlayText.classList.add('overlay-text'); 
+        overlayText.textContent = rec.overlayText;
+        
+        overlay.appendChild(overlayText); 
+        card.appendChild(overlay);
+        card.appendChild(img);
 
         const cardContent = document.createElement('div');
         cardContent.classList.add('card-content');
@@ -225,8 +237,56 @@ function textoAutomatico() {
      } 
      showNextInfo(); 
      setInterval(showNextInfo, 5000);
+}
+
+
+
+ function seleccionarPedido() {
+        const orderButtons = document.querySelectorAll('.order-button');
+        const pedidoImagen = document.getElementById('pedido-imagen');
+        const pedidoDetalle = document.getElementById('pedido-detalle');
+        const platilloInput = document.getElementById('platillo');
+        const tipoInput = document.getElementById('tipo');
+    
+        orderButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const name = this.getAttribute('data-name');
+                const price = this.getAttribute('data-price');
+                const image = this.getAttribute('data-image');
+                const tipo = this.parentElement.parentElement.querySelector('.personal').textContent;
+    
+                // Actualizar la imagen del pedido
+                pedidoImagen.src = image;
+                pedidoImagen.alt = name;
+    
+                // Añadir el nuevo pedido al detalle del pedido
+                const newItem = document.createElement('li');
+                newItem.textContent = `${name} (1 unid.) - S/.${price}`;
+                pedidoDetalle.appendChild(newItem);
+    
+                // Actualizar los campos de selección
+                platilloInput.value = name;
+                tipoInput.value = tipo;
+    
+                // Actualizar el total del pedido
+                actualizarTotal();
+            });
+        });
+    
+        function actualizarTotal() {
+            const items = pedidoDetalle.querySelectorAll('li');
+            let total = 0;
+    
+            items.forEach(item => {
+                const price = parseFloat(item.textContent.split('S/.')[1]);
+                total += price;
+            });
+    
+            const totalElement = document.querySelector('.col2 h3');
+            totalElement.textContent = `Total: S/. ${total.toFixed(2)}`;
+        }
     }
+    
+    
 
-
-
-    export { cambiarTextoPorImagen, menuImagenes, mostrarRecomendaciones, cambiarTextoPorImg, generarFooter, textoAutomatico}
+    export { cambiarTextoPorImagen, menuImagenes, mostrarRecomendaciones, cambiarTextoPorImg, generarFooter, textoAutomatico, seleccionarPedido}

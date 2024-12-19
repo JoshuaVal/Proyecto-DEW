@@ -29,23 +29,21 @@
 
         <section class="contenedor-col1">
             <div class="header-col">
-                <img src="img/pizza-pedido.png" alt="Imagen de pizza pedido" />
+                <img id="pedido-imagen" src="" alt="Imagen de pizza pedido" />
             </div>
 
             <div class="col1">
                 <h3><b>Detalle del Pedido</b></h3>
-                <ul>
-                    <li>Pizza Pepperoni (2 unid.) - S/.40.00</li>
-                    <li>Coca Cola 2 lt. (2 unid.) - S/.20.00</li>
-                    <li>Coca Cola 500 ml. (2 unid.) - S/.5.00</li>
-                    <li>Tequeños (2 unid.) - S/.18.00</li>
+                <ul id="pedido-detalle">
+                    
                 </ul>
                 <button class="boton"><a href="pago.html">PAGAR</a></button>
+                
             </div>
 
             <div class="col2">
-                <h3>Total: S/. 181.00</h3>
-                <ul>
+                <h3>Total: S/. 0.00</h3>
+                <ul id="pedido-total">
                     <li>Delivery - S/.18.00</li>
                 </ul>
             </div>
@@ -56,26 +54,30 @@
 
             <div class="inputBox">
                 <label for="platillo">Seleccionar tamaño:</label>
-                <input type="text" id="platillo" placeholder="Buscar platillos" />
-                <button>Seleccionar</button>
+                <input type="text" id="platillo" placeholder="Buscar platillos" readonly />
+                
             </div>
 
             <div class="inputBox">
                 <label for="tipo">Seleccionar tipo:</label>
-                <input type="text" id="tipo" placeholder="Buscar tipo" />
-                <button>Seleccionar</button>
+                <input type="text" id="tipo" placeholder="Buscar tipo"  readonly/>
+                
             </div>
 
             <div class="inputBox">
                 <label for="tamano">Seleccionar tamaño:</label>
-                <input type="text" id="tamano" placeholder="Buscar tamaño" />
-                <button>Seleccionar</button>
+                <select id="tamano"> 
+                    <option value="personal">Personal</option> 
+                    <option value="mediana">Mediana</option> 
+                    <option value="familiar">Familiar</option> 
+                </select>
+                
             </div>
 
             <div class="inputBox">
                 <label for="cantidad">Seleccionar cantidad:</label>
-                <input type="number" id="cantidad" placeholder="Buscar cantidad" />
-                <button>Seleccionar</button>
+                <input type="number" id="cantidad" placeholder="Seleccionar cantidad" />
+                <button id="actualizar-cantidad">Seleccionar</button>
             </div>
 
             <div class="inputBox">
@@ -84,6 +86,7 @@
                 <button>IR</button>
             </div>
         </section>
+        <script type="module" src="./Js/pedido.js"></script>
         <script type="module" src="./Js/links.js"></script>
     </div>
 </html>
