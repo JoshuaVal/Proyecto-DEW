@@ -13,6 +13,32 @@
   transition: all .2s linear;
 }
 
+
+/*Reset*/
+* {
+  box-sizing: border-box;
+  position: relative;
+  min-width: 0;
+}
+
+body {
+  max-width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #F2F2F2;
+  overflow-x: hidden;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1 {
+  text-wrap: balance;
+}
+
+
+
 /*barra de navegacion*/
 
 #nav {
@@ -22,7 +48,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  padding: 15px;
+  animation: fadeIn 1.5s ease-out;
 }
 
 #nav .title-nav a {
@@ -30,8 +56,7 @@
   font-weight: 800;
   font-size: 50px;
   color: #FF5B00;
-  margin: 19.92px 0;
-  line-height: 23.44px;
+  animation: fadeIn 1s ease-out;
 
 }
 
@@ -43,6 +68,17 @@
   text-decoration: none;
   color: #000000;
   line-height: 23.44px;
+}
+
+@keyframes fadeIn { 
+  0% { 
+      opacity: 0; 
+      transform: translateY(-20px); 
+  } 
+  100% { 
+      opacity: 1; 
+      transform: translateY(0); 
+  }
 }
 
 .button-nav {
@@ -58,6 +94,7 @@
   border: none;
   cursor: pointer;
   text-transform: uppercase;
+  animation: fadeIn 2s ease-out;
 }
 
 header #nav {
@@ -73,15 +110,6 @@ header #nav #links-nav a {
 
 
 /*menu*/
-
-#menu h1{
-    font: Montserrat, sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    color: #000000;
-    margin-bottom: 30px;
-}
-
 
 
 
