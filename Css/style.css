@@ -11,7 +11,7 @@
 
 @media (min-width: 768px) {
 
-    
+
     .contenedor {
         display: flex;
         justify-content: space-between;
@@ -78,17 +78,18 @@ h1 {
     text-decoration: none;
     color: #FFFFFF;
     line-height: 23.44px;
-    
+
 }
 
-@keyframes fadeIn { 
-    0% { 
-        opacity: 0; 
-        transform: translateY(-20px); 
-    } 
-    100% { 
-        opacity: 1; 
-        transform: translateY(0); 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -106,8 +107,8 @@ h1 {
     cursor: pointer;
     text-transform: uppercase;
     animation: fadeIn 2s ease-out;
-    
-    
+
+
 }
 
 header #nav {
@@ -126,7 +127,7 @@ header #nav #links-nav a {
     flex-direction: row;
     margin-left: 190px;
     margin-top: 25px;
-    
+
 
 }
 
@@ -171,9 +172,10 @@ header #nav #links-nav a {
 }
 
 .burguer-info {
-    position: absolute; 
-    top: 0; left: 0; 
-    width: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     opacity: 0;
     transition: opacity 1s ease-in-out;
     animation: fadeText 20s infinite;
@@ -315,7 +317,7 @@ header #nav #links-nav a {
     margin: 16px 0px;
     padding: 0;
     list-style: none;
-    top:500px;
+    top: 500px;
 }
 
 
@@ -662,31 +664,31 @@ header {
     font-weight: 400;
 }
 
-.card .overlay { 
-    position: absolute; 
-    bottom: -100%; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    background: rgba(0, 0, 0, 0.7); 
-    color: white; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    opacity: 0; 
-    transition: all 0.3s ease; 
+.card .overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
     z-index: 2;
-} 
+}
 
-.card:hover .overlay { 
-    bottom: 0; 
-    opacity: 1; 
-} 
+.card:hover .overlay {
+    bottom: 0;
+    opacity: 1;
+}
 
-.overlay-text { 
-    font-size: 18px; 
-    text-align: center; 
-    padding: 10px; 
+.overlay-text {
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
 }
 
 
@@ -909,7 +911,7 @@ header {
     font-size: 18px;
 }
 
-.iconos2 img { 
-    width: 25px; 
+.iconos2 img {
+    width: 25px;
     height: 25px;
 }
